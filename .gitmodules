@@ -1,0 +1,3 @@
+[submodule "Payments-Microservice"]
+	path = Payments-Microservice
+	url = https://github.com/StlMaris123/Payments-Microservice.git

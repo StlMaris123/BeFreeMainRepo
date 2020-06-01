@@ -1,0 +1,3 @@
+[submodule "Appointments-microservice"]
+	path = Appointments-microservice
+	url = https://github.com/StlMaris123/Appointments-microservice.git

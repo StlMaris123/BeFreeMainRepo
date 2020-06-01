@@ -11,6 +11,7 @@ before_script:
   - bundle install
   - bundle exec rake db:create --all
   - bundle exec rake db:migrate
+  - bundle exec rake db:schema:load
 script:
   - bundle exec rspec
 services:

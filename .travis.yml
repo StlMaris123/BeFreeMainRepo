@@ -8,13 +8,21 @@ rvm:
   - 2.7.0
 before_script:
   - cd *
+  - psql -c 'create database travis_ci_test;' -U postgres
+  - cp config/database.travis.yml config/database.yml
+  - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
+  - chmod +x ./cc-test-reporter
+  - ./cc-test-reporter before-build
+script:
   - bundle install
   - bundle exec rake db:create --all
   - bundle exec rake db:migrate
   - bundle exec rake db:schema:load
-script:
   - bundle exec rspec
 services:
   - postgresql
 notifications:
   email: false
+  
+after_script:
+  - ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT

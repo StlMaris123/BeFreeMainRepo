@@ -6,10 +6,7 @@
 	path = notifications-service
 	url = https://github.com/StlMaris123/notifications-service.git
 
-[submodule "Payments-Microservice"]
-	path = Payments-Microservice
-	url = https://github.com/StlMaris123/Payments-Microservice.git
-	
+
 [submodule "Be-Free-User-management"]
 	path = Be-Free-User-management
 	url  = https://github.com/StlMaris123/Be-Free-User-management.git
